@@ -39,6 +39,43 @@ activities = {
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
     }
+    ,
+        "Soccer Team": {
+            "description": "Practice soccer skills and compete in inter-school matches",
+            "schedule": "Tuesdays and Thursdays, 3:30 PM - 5:00 PM",
+            "max_participants": 25,
+            "participants": ["alex@mergington.edu", "sarah@mergington.edu"]
+        },
+        "Basketball Team": {
+            "description": "Train for basketball games and participate in league tournaments",
+            "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+            "max_participants": 15,
+            "participants": ["james@mergington.edu"]
+        },
+        "Drama Club": {
+            "description": "Perform in school plays and develop acting skills",
+            "schedule": "Wednesdays, 3:30 PM - 5:30 PM",
+            "max_participants": 20,
+            "participants": ["emily@mergington.edu", "lucas@mergington.edu"]
+        },
+        "Art Studio": {
+            "description": "Explore various art mediums including painting, drawing, and sculpture",
+            "schedule": "Thursdays, 3:00 PM - 4:30 PM",
+            "max_participants": 15,
+            "participants": ["mia@mergington.edu"]
+        },
+        "Debate Team": {
+            "description": "Develop critical thinking and public speaking through competitive debates",
+            "schedule": "Fridays, 4:00 PM - 5:30 PM",
+            "max_participants": 16,
+            "participants": ["noah@mergington.edu", "ava@mergington.edu"]
+        },
+        "Science Club": {
+            "description": "Conduct experiments and explore scientific concepts through hands-on projects",
+            "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
+            "max_participants": 18,
+            "participants": ["william@mergington.edu", "isabella@mergington.edu"]
+        }
 }
 
 
@@ -53,6 +90,7 @@ def get_activities():
 
 
 @app.post("/activities/{activity_name}/signup")
+# Validate student is not already signed up and activity is not full
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
     # Validate activity exists
