@@ -51,6 +51,10 @@ def reset_activities():
         }
     }
     
+    # Reset to original state before test
+    activities.clear()
+    activities.update(original_activities)
+    
     yield
     
     # Reset to original state after test
