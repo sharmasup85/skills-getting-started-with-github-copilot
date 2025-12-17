@@ -40,3 +40,4 @@ Thumbs.db
 .actrc*
 
 __pycache__/
+.pytest_cache/
